@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- header section start -->
+    <div class="header-container">
+      <div class="logo">
+        <img src="Gambar/1.logo.png" alt="" />
+      </div>
+
+      <div class="navbar">
+        <a href="index.html">
+          <div class="icon">
+            <i class="fas fa-home" aria-hidden="true"></i>
+            <i class="fas fa-home" aria-hidden="true"></i>
+          </div>
+          <div class="name"><span data-text="Home">Home</span></div>
+        </a>
+        <a href="product.html">
+          <div class="icon">
+            <i class="fas fa-toolbox" aria-hidden="true"></i>
+            <i class="fas fa-toolbox" aria-hidden="true"></i>
+          </div>
+          <div class="name"><span data-text="Products">Products</span></div>
+        </a>
+        <a href="gallery.html" class="active">
+          <div class="icon">
+            <i class="fas fa-camera" aria-hidden="true"></i>
+            <i class="fas fa-camera" aria-hidden="true"></i>
+          </div>
+          <div class="name"><span data-text="Gallery">Gallery</span></div>
+        </a>
+        <a href="#">
+          <div class="icon">
+            <i class="fas fa-headset" aria-hidden="true"></i>
+            <i class="fas fa-headset" aria-hidden="true"></i>
+          </div>
+          <div class="name"><span data-text="Service">Service</span></div>
+        </a>
+        <a href="teams.html">
+          <div class="icon">
+            <i class="fas fa-users" aria-hidden="true"></i>
+            <i class="fas fa-users" aria-hidden="true"></i>
+          </div>
+          <div class="name"><span data-text="Teams">Teams</span></div>
+        </a>
+      </div>
+    </div>
+    <!-- header section ends -->
+
+    <!-- hero section start -->
+    <div class="glr-container">
+      <div class="slide">
+        <div
+          class="item"
+          style="background-image: url(Gambar_Gallery/sany1.jpg)"
+        >
+          <div class="glr-content">
+            <div class="name">Who We Are</div>
+            <div class="des">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
+              hic.
+            </div>
+            <button class="download">Download</button>
+          </div>
+        </div>
+        <div
+          class="item"
+          style="background-image: url(Gambar_Gallery/sany2.jpg)"
+        >
+          <div class="glr-content">
+            <div class="name">What We Do</div>
+            <div class="des">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
+              hic.
+            </div>
+            <button class="download">Download</button>
+          </div>
+        </div>
+        <div
+          class="item"
+          style="background-image: url(Gambar_Gallery/sany3.jpg)"
+        >
+          <div class="glr-content">
+            <div class="name">SANY’s Footprints</div>
+            <div class="des">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
+              hic.
+            </div>
+            <button class="download">Download</button>
+          </div>
+        </div>
+        <div
+          class="item"
+          style="background-image: url(Gambar_Gallery/sany4.jpg)"
+        >
+          <div class="glr-content">
+            <div class="name">SANY’s Footprints</div>
+            <div class="des">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
+              hic.
+            </div>
+            <button class="download">Download</button>
+          </div>
+        </div>
+        <div
+          class="item"
+          style="background-image: url(Gambar_Gallery/sany5.jpg)"
+        >
+          <div class="glr-content">
+            <div class="name">Working on the Future</div>
+            <div class="des">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
+              hic.
+            </div>
+            <button class="download">Download</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="button">
+        <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+    <!-- hero section ends -->
+
+    <!-- Pop Up Section Start -->
+
+    <!-- Pop Up Section end -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var downloadButtons = document.querySelectorAll(".download");
+
+        downloadButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            alert("Your download is starting!");
+          });
+        });
+      });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
