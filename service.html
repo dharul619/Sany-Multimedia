@@ -12,6 +12,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <style>
+      body {
+        background-color: var(--black);
+      }
+    </style>
   </head>
   <body>
     <!-- header section start -->
@@ -21,35 +26,35 @@
       </div>
 
       <div class="navbar">
-        <a href="#">
+        <a href="index.html">
           <div class="icon">
             <i class="fas fa-home" aria-hidden="true"></i>
             <i class="fas fa-home" aria-hidden="true"></i>
           </div>
           <div class="name"><span data-text="Home">Home</span></div>
         </a>
-        <a href="#">
+        <a href="product.html">
           <div class="icon">
             <i class="fas fa-toolbox" aria-hidden="true"></i>
             <i class="fas fa-toolbox" aria-hidden="true"></i>
           </div>
           <div class="name"><span data-text="Products">Products</span></div>
         </a>
-        <a href="#" class="active">
+        <a href="gallery.html">
           <div class="icon">
             <i class="fas fa-camera" aria-hidden="true"></i>
             <i class="fas fa-camera" aria-hidden="true"></i>
           </div>
           <div class="name"><span data-text="Gallery">Gallery</span></div>
         </a>
-        <a href="#">
+        <a href="service.html" class="active">
           <div class="icon">
             <i class="fas fa-headset" aria-hidden="true"></i>
             <i class="fas fa-headset" aria-hidden="true"></i>
           </div>
           <div class="name"><span data-text="Service">Service</span></div>
         </a>
-        <a href="#">
+        <a href="teams.html">
           <div class="icon">
             <i class="fas fa-users" aria-hidden="true"></i>
             <i class="fas fa-users" aria-hidden="true"></i>
@@ -59,5 +64,24 @@
       </div>
     </div>
     <!-- header section ends -->
+
+    <!-- hero section start -->
+    <div class="srv-container">
+      <div class="srv-wraper">
+        <div class="box" style="--clr: #ff0084"></div>
+        <div class="box" style="--clr: #77ff00"></div>
+        <div class="box" style="--clr: #00ddff"></div>
+      </div>
+    </div>
+
+    <!-- hero section end -->
+    <script>
+      document.querySelectorAll(".box").forEach((item) => {
+        item.onmousemove = (e) => {
+          item.style.setProperty("--x", e.pageX - item.offsetLeft + "px");
+          item.style.setProperty("--y", e.pageY - item.offsetTop + "px");
+        };
+      });
+    </script>
   </body>
 </html>

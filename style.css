@@ -359,14 +359,15 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 100px;
+  gap: 70px;
   align-items: center;
   overflow: visible;
 }
 
 .card {
-  width: 200px;
-  height: 400px;
+  margin-top: 100px;
+  width: 250px;
+  height: 420px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -394,6 +395,7 @@
   border-radius: 30px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  height: 100%;
 }
 
 .wraper img {
@@ -448,7 +450,7 @@
   opacity: 1;
 }
 .card:hover .wraper::after {
-  height: 120px;
+  height: 50px;
 }
 
 .text {
@@ -622,6 +624,60 @@
 }
 
 /* Product sub-navbar section END */
+
+/* service section start */
+.srv-container {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(5%);
+}
+
+.srv-wraper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3em;
+}
+
+.srv-wraper .box {
+  height: 380px;
+  width: 300px;
+  background: rgb(255, 255, 255, 0.2);
+  backdrop-filter: blur(25px);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.srv-wraper .box::before {
+  content: "";
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: 650px;
+  height: 650px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(var(--yellow), transparent, transparent);
+  opacity: 0;
+  transition: 0.5s, top 0s, left 0s;
+}
+
+.srv-wraper .box:hover:before {
+  opacity: 1;
+}
+
+.srv-wraper .box::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: 18px;
+  background: rgba(45, 45, 45, 0.75);
+}
+
+/* service section end */
 
 /* Media queries */
 /* Tablet section start */
