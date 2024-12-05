@@ -572,7 +572,7 @@
   display: flex;
   column-gap: 1rem;
   position: absolute;
-  bottom: 1.25rem;
+  bottom: 5rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -650,6 +650,10 @@
   border-radius: 20px;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .srv-wraper .box::before {
@@ -675,6 +679,133 @@
   inset: 2px;
   border-radius: 18px;
   background: rgba(45, 45, 45, 0.75);
+}
+
+.srv-wraper .box i {
+  color: var(--white);
+  font-size: 120px;
+  opacity: 0.9;
+  z-index: 9999;
+}
+
+.srv-wraper .box h2 {
+  color: var(--yellow);
+  /* color: rgba(255, 255, 255, 0.7); */
+  z-index: 9999;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.srv-wraper .box p {
+  color: rgba(255, 255, 255, 0.7);
+  z-index: 9999;
+  font-size: 15px;
+  text-align: center;
+}
+
+.srv-wraper .box .btn {
+  position: relative;
+  display: inline-block;
+  border: none;
+  border-radius: 50px;
+  background: none;
+  padding: 25px 75px;
+  z-index: 999;
+  overflow: visible;
+  margin: 10px;
+}
+
+.srv-wraper .box .btn a {
+  overflow: visible;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  color: var(--white);
+  z-index: 9999;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(15px);
+}
+
+.srv-wraper .box .btn:hover a {
+  letter-spacing: 3px;
+  overflow: visible;
+}
+
+.srv-wraper .box .btn a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(255, 255, 255 0.15), transparent);
+  transform: skewX(40deg) translateX(0);
+  transition: all 0.5s ease-out;
+  z-index: 9999;
+  overflow: visible;
+}
+
+.srv-wraper .box .btn:hover a::before {
+  transform: skewX(40deg) translateX(200%);
+  overflow: visible;
+}
+
+.srv-wraper .box .btn::before,
+.srv-wraper .box .btn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 10px;
+  border-radius: 10px;
+  background: var(--yellow);
+  transition: all 0.4s ease-in-out;
+  transition-delay: 0s;
+  overflow: visible;
+}
+
+.srv-wraper .box .btn::before {
+  bottom: -5px;
+  overflow: visible;
+}
+
+.srv-wraper .box::after {
+  top: -5px;
+  overflow: visible;
+}
+
+.srv-wraper .box .btn:hover::before,
+.srv-wraper .box .btn:hover::after {
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.3s;
+  overflow: visible;
+}
+
+.srv-wraper .box .btn:hover::before {
+  overflow: visible;
+  bottom: 0;
+}
+
+.srv-wraper .box .btn:hover::after {
+  overflow: visible;
+  top: 0;
 }
 
 /* service section end */
