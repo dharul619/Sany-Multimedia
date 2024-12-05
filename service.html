@@ -15,6 +15,7 @@
     <style>
       body {
         background-color: var(--black);
+        overflow: visible;
       }
     </style>
   </head>
@@ -78,7 +79,7 @@
           <i class="fas fa-comment-dots"></i>
           <h2>FeedBack</h2>
           <p>Lorem ipsum dolor sit, amet adipisicing elit. Nam, facilis.</p>
-          <button class="btn"><a href="#">Read More</a></button>
+          <button class="btn"><a href="#feedback">Read More</a></button>
         </div>
         <div class="box">
           <i class="fas fa-wrench"></i>
@@ -90,6 +91,36 @@
     </div>
 
     <!-- hero section end -->
+
+    <!-- Pop Up Section Start -->
+    <div class="fb-box" id="feedback">
+      <div class="fb-wrapper">
+        <h2>Please Fill up The Form</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="fb-content">
+          <div class="fb-container">
+            <form>
+              <label>Your Name</label>
+              <input placeholder="Your Name.." type="text" />
+              <label>Your Email</label>
+              <input placeholder="Your Email.." type="text" />
+              <label>Message</label>
+              <textarea iplaceholder="Write something.." type="text"></textarea>
+              <input type="button" value="Submit" id="submit" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modal">
+      <div class="modal-inner">
+        <i class="fas fa-circle-check"></i>
+        <h2>Your Response Has Been Record!</h2>
+        <button id="closemodal">close</button>
+      </div>
+    </div>
+    <!-- Pop Up Section End -->
     <script>
       document.querySelectorAll(".box").forEach((item) => {
         item.onmousemove = (e) => {
