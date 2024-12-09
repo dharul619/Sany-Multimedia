@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>SANY'S Undira</title>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -18,7 +18,11 @@
 
     <div class="header-container">
       <div class="logo">
-        <img src="Gambar/1.logo.png" alt="" />
+        <a href="index.html"><img src="Gambar/1.logo.png" alt="" /></a>
+      </div>
+
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
       </div>
 
       <div class="navbar">
@@ -132,9 +136,25 @@
           not only more connected but also more responsible and sustainable.
         </p>
 
-        <button>Show More</button>
+        <button id="showMoreButton">Show More</button>
+      </div>
+    </div>
+    <div class="youtube-popup-container">
+      <div class="youtube-popup-content">
+        <span class="popup-close">&times;</span>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/eGCKZPRQTdQ?si=IFqeieZGc8hakWxy"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
     <!-- hero section end -->
+    <script src="script.js"></script>
   </body>
 </html>
