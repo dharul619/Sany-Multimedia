@@ -13,9 +13,71 @@
       referrerpolicy="no-referrer"
     />
     <style>
+      * {
+        overflow: visible;
+        box-sizing: border-box;
+      }
       body {
         background-color: var(--black);
-        overflow: visible;
+        overflow-x: hidden;
+      }
+
+      .grid-cards-horizontal {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px; /* Jarak antar card */
+        /* margin-top: 20px; */
+      }
+
+      .card {
+        margin-top: 10px;
+        flex-direction: column;
+        height: 300px;
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        flex: 1; /* Membagi ukuran card secara proporsional */
+        max-width: calc(
+          (700px - 40px) / 3
+        ); /* Mengatur lebar agar muat dalam container */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .card i {
+        font-size: 70px;
+        color: #ff6600;
+        margin-bottom: 10px;
+      }
+
+      .card h3 {
+        font-size: 18px;
+        margin: 10px 0;
+        color: #333;
+      }
+
+      .card p {
+        font-size: 14px;
+        color: #666;
+        margin: 0;
+      }
+
+      .card a {
+        text-decoration: none;
+        color: #ff6600;
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+
+      .card a:hover {
+        color: #ff3300;
       }
     </style>
   </head>
@@ -72,7 +134,15 @@
 
     <!-- hero section start -->
     <div class="srv-container">
-      <div class="srv-wraper">
+      <div class="srv-image">
+        <img src="Gambar/service.png" alt="" />
+      </div>
+
+      <div class="srv-content">
+        <h1>Service</h1>
+        <h2>Center</h2>
+      </div>
+      <!-- <div class="srv-wraper">
         <div class="box">
           <i class="fas fa-circle-question"></i>
           <h2>Customer Service</h2>
@@ -90,41 +160,243 @@
           <h2>Maintenance</h2>
           <p>Lorem ipsum dolor sit, amet adipisicing elit. Nam, facilis.</p>
           <button class="btn"><a href="#">Read More</a></button>
-        </div>
-      </div>
+        </div> -->
+      <!-- </div> -->
     </div>
 
     <!-- hero section end -->
 
-    <!-- Pop Up Section Start -->
-    <div class="fb-box" id="feedback">
-      <div class="fb-wrapper">
-        <h2>Please Fill up The Form</h2>
-        <a class="close" href="#">&times;</a>
-        <div class="fb-content">
-          <div class="fb-container">
-            <form>
-              <label>Your Name</label>
-              <input placeholder="Your Name.." type="text" />
-              <label>Your Email</label>
-              <input placeholder="Your Email.." type="text" />
-              <label>Message</label>
-              <textarea iplaceholder="Write something.." type="text"></textarea>
-              <input type="button" value="Submit" id="submit" />
-            </form>
+    <!-- service section 2 start -->
+    <div class="page">
+      <div class="srvc-container">
+        <div class="tab-box">
+          <button class="tab-btn active">Service Location</button>
+          <button class="tab-btn">Feedback</button>
+          <button class="tab-btn">Call Center</button>
+          <div class="line"></div>
+        </div>
+        <div class="content-box">
+          <div class="content active">
+            <div class="loc-container">
+              <!-- Title section -->
+              <div class="loc-title">Service Location</div>
+              <div class="loc-content">
+                <!-- Registration form -->
+                <form action="#">
+                  <div class="user-details">
+                    <!-- Dropdown for Country -->
+                    <div class="input-box">
+                      <span class="details">Country</span>
+                      <select required>
+                        <option value="" disabled selected>
+                          Select your country
+                        </option>
+                        <option value="indonesia">Indonesia</option>
+                        <option value="malaysia">Malaysia</option>
+                        <option value="singapore">Singapore</option>
+                        <!-- Add more countries as needed -->
+                      </select>
+                    </div>
+                    <!-- Dropdown for Province -->
+                    <div class="input-box">
+                      <span class="details">Province</span>
+                      <select required>
+                        <option value="" disabled selected>
+                          Select your province
+                        </option>
+                        <option value="jakarta">DKI Jakarta</option>
+                        <option value="west-java">West Java</option>
+                        <option value="central-java">Central Java</option>
+                        <!-- Add more provinces as needed -->
+                      </select>
+                    </div>
+                    <!-- Dropdown for City/District -->
+                    <div class="input-box">
+                      <span class="details">City/District</span>
+                      <select required>
+                        <option value="" disabled selected>
+                          Select your city/district
+                        </option>
+                        <option value="jakarta-central">Central Jakarta</option>
+                        <option value="bandung">West Jakarta</option>
+                        <option value="semarang">South Jakarta</option>
+                        <option value="semarang">East Jakarta</option>
+                        <option value="semarang">North Jakarta</option>
+                        <!-- Add more cities/districts as needed -->
+                      </select>
+                    </div>
+                    <!-- Dropdown for Subdistrict -->
+                    <div class="input-box">
+                      <span class="details">Subdistrict</span>
+                      <select required>
+                        <option value="" disabled selected>
+                          Select your subdistrict
+                        </option>
+                        <option value="kemayoran">Kemayoran</option>
+                        <option value="sudirman">Sudirman</option>
+                        <option value="cihampelas">Bendungan Hilir</option>
+                        <!-- Add more subdistricts as needed -->
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Submit button -->
+                  <div class="button">
+                    <input type="submit" value="Submit" />
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div id="modal" class="modal">
+              <div class="modal-content">
+                <div class="loc-container">
+                  <h2>Your Service Location Nearby</h2>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.9242451148757!2d106.85246817498962!3d-6.140878593846026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f53422c54889%3A0x6a4926a44407d8e!2sPT.%20Sany%20Perkasa!5e0!3m2!1sid!2sid!4v1734014863227!5m2!1sid!2sid"
+                    width="400"
+                    height="300"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                  <a href="javascript:void(0)" class="close">Close</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feedback -->
+          <div class="content">
+            <div class="loc-container">
+              <!-- Title section -->
+              <div class="loc-title">Feedback</div>
+              <div class="loc-content">
+                <!-- Registration form -->
+                <form action="#">
+                  <div class="user-details">
+                    <!-- Dropdown for Country -->
+                    <div class="input-box">
+                      <span class="details">Full Name</span>
+                      <input
+                        type="text"
+                        placeholder="Enter your name"
+                        required
+                      />
+                    </div>
+                    <!-- Dropdown for Province -->
+                    <div class="input-box">
+                      <span class="details">Email</span>
+                      <input
+                        type="text"
+                        placeholder="Enter your email"
+                        required
+                      />
+                    </div>
+
+                    <!-- Dropdown for Subdistrict -->
+                    <div class="input-box">
+                      <span class="details">Message</span>
+                      <textarea
+                        placeholder="Write something.."
+                        type="text"
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <!-- Submit button -->
+                  <div class="button">
+                    <input type="submit" value="Submit" id="sbmt-feedback" />
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div id="feedback-modal" class="modal">
+              <div class="modal-content">
+                <h2>Thank You for Your Feedback!</h2>
+                <i
+                  class="fas fa-check-circle"
+                  style="font-size: 50px; color: #28a745"
+                ></i>
+                <p>Your response has been received successfully.</p>
+                <a href="javascript:void(0)" class="close">Close</a>
+              </div>
+            </div>
+          </div>
+          <div class="content">
+            <h2 style="text-align: center; margin-top: 20px">Call Center</h2>
+
+            <div style="width: 700px; margin: 0 auto; padding: 20px">
+              <div class="grid-cards-horizontal">
+                <div class="card">
+                  <i class="fas fa-phone-alt"></i>
+                  <h3>Telepon</h3>
+                  <p><a href="tel:+622198765432">+62 21 9876 5432</a></p>
+                </div>
+                <div class="card">
+                  <i class="fab fa-whatsapp"></i>
+                  <h3>WhatsApp</h3>
+                  <p>
+                    <a href="https://wa.me/6281234567890">+62 812 3456 7890</a>
+                  </p>
+                </div>
+                <div class="card">
+                  <i class="fas fa-envelope"></i>
+                  <h3>Email</h3>
+                  <p>
+                    <a href="mailto:support@sanyperkasa.com"
+                      >support@sanyperkasa.com</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- batas -->
           </div>
         </div>
       </div>
     </div>
+    <!-- service section 2 end -->
 
-    <div class="modal" id="modal">
-      <div class="modal-inner">
-        <i class="fas fa-circle-check"></i>
-        <h2>Your Response Has Been Record!</h2>
-        <button id="closemodal">close</button>
+    <!-- Footer Section Start -->
+    <footer>
+      <div class="footer-content">
+        <h3>SANY'S Company</h3>
+        <p>
+          Ruko Puri Mutiara, Jl. Griya Utama No.67-68 Blok. A, Sunter Agung,
+          Kec. Tj. Priok, Jkt Utara, Daerah Khusus Ibukota Jakarta 14350
+        </p>
+        <ul class="socials">
+          <li>
+            <a href="https://m.facebook.com/ptsanyperkasa318/photos/"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/ptsanyperkasa/reels/"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://web.whatsapp.com/"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+          </li>
+          <li>
+            <a href=" https://www.youtube.com/channel/UC4uZ1e7dmC7QN3VfgmThcwQ"
+              ><i class="fa-brands fa-youtube"></i
+            ></a>
+          </li>
+        </ul>
       </div>
-    </div>
-    <!-- Pop Up Section End -->
+      <div class="footer-bottom">
+        <p>
+          copyright &copy;2024 Undira. Design by <span>Dharul Aziz Rendy</span>
+        </p>
+      </div>
+    </footer>
+    <!-- Footer Section End -->
     <script>
       document.querySelectorAll(".box").forEach((item) => {
         item.onmousemove = (e) => {
@@ -133,6 +405,74 @@
         };
       });
     </script>
-    <script src="script.js"></script>
+    <script>
+      const tabs = document.querySelectorAll(".tab-btn");
+      const all_content = document.querySelectorAll(".content");
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener("click", (e) => {
+          tabs.forEach((tab) => {
+            tab.classList.remove("active");
+          });
+          tab.classList.add("active");
+
+          var line = document.querySelector(".line");
+          line.style.width = e.target.offsetWidth + "px";
+          line.style.left = e.target.offsetLeft + "px";
+
+          all_content.forEach((content) => {
+            content.classList.remove("active");
+          });
+          all_content[index].classList.add("active");
+        });
+      });
+    </script>
+
+    <script>
+      const modal = document.getElementById("modal");
+      const submitButton = document.querySelector(
+        ".button input[type='submit']"
+      );
+      const closeButton = document.querySelector(".modal-content .close");
+
+      submitButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        modal.style.display = "flex";
+      });
+
+      closeButton.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    </script>
+
+    <script>
+      const feedbackModal = document.getElementById("feedback-modal");
+      const feedbackForm = document.querySelector(".loc-content form");
+      const closeModal = document.querySelector("#feedback-modal .close");
+
+      document
+        .getElementById("sbmt-feedback")
+        .addEventListener("click", (e) => {
+          e.preventDefault();
+          feedbackModal.style.display = "flex";
+        });
+
+      closeModal.addEventListener("click", () => {
+        feedbackModal.style.display = "none";
+      });
+
+      window.addEventListener("click", (e) => {
+        if (e.target === feedbackModal) {
+          feedbackModal.style.display = "none";
+        }
+      });
+    </script>
+    <!-- <script src="script.js"></script> -->
   </body>
 </html>
