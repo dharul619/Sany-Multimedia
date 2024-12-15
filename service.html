@@ -134,34 +134,31 @@
 
     <!-- hero section start -->
     <div class="srv-container">
-      <div class="srv-image">
-        <img src="Gambar/service.png" alt="" />
-      </div>
+      <section>
+        <img src="Gambar_Parallax/bg2.jpg" alt="" id="bg" />
+        <img src="Gambar_Parallax/moon.png" alt="" id="moon" />
+        <img src="Gambar_Parallax/mountain2.png" alt="" id="mountain" />
+        <img src="Gambar_Parallax/road.png" alt="" id="road" />
+        <h2 id="text">Service Center</h2>
+      </section>
 
-      <div class="srv-content">
-        <h1>Service</h1>
-        <h2>Center</h2>
-      </div>
-      <!-- <div class="srv-wraper">
-        <div class="box">
-          <i class="fas fa-circle-question"></i>
-          <h2>Customer Service</h2>
-          <p>Lorem ipsum dolor sit, amet adipisicing elit. Nam, facilis.</p>
-          <button class="btn"><a href="#">Read More</a></button>
-        </div>
-        <div class="box">
-          <i class="fas fa-comment-dots"></i>
-          <h2>FeedBack</h2>
-          <p>Lorem ipsum dolor sit, amet adipisicing elit. Nam, facilis.</p>
-          <button class="btn"><a href="#feedback">Read More</a></button>
-        </div>
-        <div class="box">
-          <i class="fas fa-wrench"></i>
-          <h2>Maintenance</h2>
-          <p>Lorem ipsum dolor sit, amet adipisicing elit. Nam, facilis.</p>
-          <button class="btn"><a href="#">Read More</a></button>
-        </div> -->
-      <!-- </div> -->
+      <script>
+        let bg = document.getElementById("bg");
+        let moon = document.getElementById("moon");
+        let mountain = document.getElementById("mountain");
+        let road = document.getElementById("road");
+        let btext = document.getElementById("text");
+
+        window.addEventListener("scroll", function () {
+          var value = window.scrollY;
+
+          bg.style.top = value * 0.5 + "px";
+          moon.style.left = -value * 0.5 + "px";
+          mountain.style.top = -value * 0.15 + "px";
+          road.style.top = value * 0.15 + "px";
+          text.style.top = value * 0.15 + "px";
+        });
+      </script>
     </div>
 
     <!-- hero section end -->

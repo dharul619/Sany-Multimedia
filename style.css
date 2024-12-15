@@ -1010,11 +1010,67 @@
 .srvc-container {
   /* position: relative; */
   width: 800px;
-  height: 90vh;
+  height: 100vh;
   background-color: #f3f3f3;
   padding: 30px;
   box-shadow: 1 2px 16px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
+}
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffdab9;
+  z-index: 888;
+  mix-blend-mode: color;
+}
+section::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, #f08080, transparent);
+  z-index: 888;
+}
+
+section img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+#text {
+  position: relative;
+  color: white;
+  font-size: 5rem;
+  z-index: 1;
+  /* mix-blend-mode: multiply; */
+  /* background-color: rgba(
+    0,
+    0,
+    0,
+    0.9
+  ); Latar belakang gelap dengan opasitas */
+  border-radius: 10px; /* Membuat sudut teks melengkung */
+  text-align: center;
 }
 
 .tab-box {
