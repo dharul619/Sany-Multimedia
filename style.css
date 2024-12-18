@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 * {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
   overflow: hidden;
 }
 
@@ -16,11 +16,11 @@
 .header-container {
   width: 100%;
   position: fixed;
-  background-color: red;
+  /* background-color: red; */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 99999;
+  z-index: 999999;
 }
 
 .header-container .logo img {
@@ -141,16 +141,39 @@
 }
 
 .hero-container {
-  display: flex;
   position: relative;
+  display: flex;
   justify-content: flex-end;
-  background-image: linear-gradient(rgba(20, 8, 18, 0.7), rgba(20, 8, 18, 0.7)),
-    url("Gambar/home.jpeg");
-  background-size: cover;
-  background-position: center;
-  flex-direction: row;
+  align-items: center;
   overflow: hidden;
   height: 100vh;
+}
+
+.hero-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(
+    --dynamic-bg,
+    linear-gradient(rgba(20, 8, 18, 0.7), rgba(20, 8, 18, 0.7)),
+    url("Gambar/home.jpeg")
+  );
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  animation: zoomOut 10s ease-in-out infinite;
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .hero-container .content {
@@ -219,11 +242,12 @@
   top: 10vh;
   background-color: var(--yellow);
   margin-top: 40px;
-  width: 250px;
+  width: 200px;
   padding: 15px 10px;
   font-weight: 500;
   color: var(--black);
   border: 1px solid var(--black);
+  border-radius: 20px;
 }
 
 .hero-container .content button:hover {
@@ -231,6 +255,13 @@
   color: var(--yellow);
   cursor: pointer;
   border: 1px solid var(--yellow);
+}
+
+.hero-container .content button i {
+  font-size: 30px;
+  /* color: rgba(0, 0, 0, 0.7); */
+  /* opacity: 0.5; */
+  /* color: #fff; */
 }
 
 .youtube-popup-container {
@@ -506,33 +537,33 @@
 
 /* Teeams Section Start */
 .card-container {
-  /* position: absolute; */
-  background-color: #000;
-  opacity: 0.9;
-  z-index: 9999;
-  width: 100%;
+  overflow: hidden;
+  background-color: linear-gradient(to bottom right, #2c3e50, #bdc3c7);
   height: 100vh;
+  opacity: 0.9;
+  width: 100%;
   margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 70px;
-  align-items: center;
-  overflow: visible;
+  padding-left: 10%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+  align-items: flex-end;
+  justify-content: flex-end;
+  box-sizing: border-box;
 }
-
 .card {
-  margin-top: 100px;
-  width: 250px;
+  overflow: hidden;
+  width: 300px;
   height: 420px;
+  bottom: 10%;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 36px;
-  perspective: 2500px;
+  padding: 0 20px;
   cursor: pointer;
   border-radius: 30px;
+  perspective: 2500px;
   overflow: visible;
 }
 
@@ -669,7 +700,10 @@
   scroll-behavior: smooth;
   scroll-snap-align: start;
   height: auto;
-  background: linear-gradient(to bottom, #505050, transparent);
+  background: linear-gradient(to bottom, rgba(20, 8, 18, 0.7), transparent);
+
+  /* linear-gradient(rgba(20, 8, 18, 0.7), rgba(20, 8, 18, 0.7)),
+    url("Gambar/home.jpeg") */
 }
 
 .prd-slider-wraper {
@@ -1352,19 +1386,24 @@ footer {
 }
 
 .socials {
+  padding-left: 0;
   list-style: none;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 1rem 0 3rem 0;
+  justify-content: space-around;
+  margin: 1rem 0;
   text-align: center;
 }
 
 .socials li {
+  padding-left: 0;
+  display: flex;
+  justify-content: space-around;
   margin: 0 10px;
 }
 
 .socials a {
+  padding-left: 0;
   text-decoration: none;
   color: #fff;
 }
@@ -1557,6 +1596,53 @@ footer {
   }
 
   /* SERVICE SECTION END */
+
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .navbar {
+    display: none; /* Sembunyikan navbar, aktifkan hamburger menu */
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  /* TEAMS SECTION START */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    /* position: relative; */
+    max-width: 700px;
+    width: 100%;
+    gap: 10px;
+    /* padding-left: 5%; */
+    /* align-items: center; */
+    /* gap: 100px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
+  }
+
+  .card {
+    max-width: 250px; /* Resize cards for smaller screens */
+    height: 350px;
+  }
+
+  .text h2 {
+    font-size: 20px;
+  }
+
+  .text p {
+    font-size: 12px;
+  }
+
+  /* TEAMS SECTION END */
 }
 /* Tablet section Ends */
 
@@ -1707,7 +1793,7 @@ footer {
   }
 
   .grid-cards-horizontal {
-    background-color: red;
+    /* background-color: red; */
     flex-direction: column;
     justify-content: center;
     /* align-items: center; */
@@ -1716,7 +1802,33 @@ footer {
     padding: 0;
   }
 
+  .content-box .button {
+    width: 300px;
+  }
+
   /* SERVICE SECTION END */
+
+  /* TEAMS SECTION START */
+  .card-container {
+    padding-top: 500px;
+    height: 190vh;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    /* max-width: 250px; */
+    width: 100%;
+    padding: 0;
+    gap: 50px;
+  }
+
+  .card {
+    height: 300px; /* Lebih kecil pada layar mobile */
+  }
+
+  .text h2 {
+    font-size: 18px;
+  }
+  /* TEAMS SECTION END */
 
   /* FOOTER SECTION START */
   .footer-content p {

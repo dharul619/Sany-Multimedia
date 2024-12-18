@@ -21,8 +21,8 @@
         --yellow: #e29a3e;
       }
       * {
-        padding: 0;
-        margin: 0;
+        /* padding: 0; */
+        /* margin: 0; */
         box-sizing: border-box;
         overflow: visible;
         overflow-x: hidden;
@@ -35,6 +35,7 @@
       .product-img img {
         width: 100%;
         display: block;
+        z-index: 1000;
       }
       .container {
         width: 88vw;
@@ -91,6 +92,7 @@
         cursor: pointer;
       }
       .product-img {
+        overflow-x: visible;
         background: var(--white-light);
         box-shadow: 0 0 20px 10px var(--white-light);
         width: 200px;
@@ -162,12 +164,15 @@
         color: var(--yellow);
       }
       .product-img img {
+        overflow-x: visible;
         transition: transform 0.6s ease;
       }
       .product:hover .product-img img {
-        transform: scale(1.1);
+        overflow-x: visible;
+        transform: scale(1.2);
       }
       .product:hover .product-img {
+        overflow-x: visible;
         background: var(--yellow);
       }
       .product:hover .product-btns {
@@ -372,7 +377,7 @@
           veniam, optio, possimus assumenda laudantium. Temporibus, quis cum.
         </p>
 
-        <div class="product-items">
+        <div class="product-items" style="overflow-x: visible">
           <!-- single product -->
           <div class="product">
             <div class="product-content">

@@ -12,6 +12,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <style>
+      * {
+        overflow-y: visible;
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
   </head>
   <body>
     <!-- navbar section start -->
@@ -136,7 +142,7 @@
           not only more connected but also more responsible and sustainable.
         </p>
 
-        <button id="showMoreButton">Show More</button>
+        <button id="showMoreButton"><i class="fas fa-play"></i></button>
       </div>
     </div>
     <div class="youtube-popup-container">
@@ -155,6 +161,68 @@
       </div>
     </div>
     <!-- hero section end -->
+
+    <!-- Footer Section Start -->
+    <footer>
+      <div class="footer-content">
+        <h3>SANY'S Company</h3>
+        <p>
+          Ruko Puri Mutiara, Jl. Griya Utama No.67-68 Blok. A, Sunter Agung,
+          Kec. Tj. Priok, Jkt Utara, Daerah Khusus Ibukota Jakarta 14350
+        </p>
+        <ul class="socials">
+          <li>
+            <a href="https://m.facebook.com/ptsanyperkasa318/photos/"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/ptsanyperkasa/reels/"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://web.whatsapp.com/"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+          </li>
+          <li>
+            <a href=" https://www.youtube.com/channel/UC4uZ1e7dmC7QN3VfgmThcwQ"
+              ><i class="fa-brands fa-youtube"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          copyright &copy;2024 Undira. Design by <span>Dharul Aziz Rendy</span>
+        </p>
+      </div>
+    </footer>
+    <!-- Footer Section End -->
+    <script>
+      const heroContainer = document.querySelector(".hero-container");
+
+      const backgrounds = [
+        'linear-gradient(rgba(20, 8, 18, 0.7), rgba(20, 8, 18, 0.7)), url("Gambar/home.jpeg")',
+        'linear-gradient(rgba(20, 8, 18, 0.7), rgba(20, 8, 18, 0.7)), url("Gambar_Gallery/sany1.jpg")',
+        'linear-gradient(rgba(20, 8, 18, 0.7), rgba(20, 8, 18, 0.7)), url("Gambar_Gallery/sany9.jpg")',
+      ];
+
+      let currentIndex = 0;
+
+      function changeBackground() {
+        currentIndex = (currentIndex + 1) % backgrounds.length;
+
+        // Ganti style elemen pseudo ::before
+        heroContainer.style.setProperty(
+          "--dynamic-bg",
+          backgrounds[currentIndex]
+        );
+      }
+
+      setInterval(changeBackground, 10000);
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
