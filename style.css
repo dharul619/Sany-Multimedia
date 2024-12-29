@@ -700,7 +700,7 @@
   scroll-behavior: smooth;
   scroll-snap-align: start;
   height: auto;
-  background: linear-gradient(to bottom, rgba(20, 8, 18, 0.7), transparent);
+  background: linear-gradient(to bottom, rgba(0, 0, 0), white);
 
   /* linear-gradient(rgba(20, 8, 18, 0.7), rgba(20, 8, 18, 0.7)),
     url("Gambar/home.jpeg") */
@@ -1615,7 +1615,10 @@ footer {
 
   /* TEAMS SECTION START */
   .card-container {
+    padding-top: 300px;
     display: flex;
+    height: 190vh;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
@@ -1762,6 +1765,21 @@ footer {
     max-width: 100%;
   }
 
+  .btn-icon {
+    position: relative;
+    left: 70%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7); /* Background hitam transparan */
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
   /* GALLERY SECTION END */
 
   /* SERVICE SECTION START */
@@ -1823,6 +1841,7 @@ footer {
 
   .card {
     height: 300px; /* Lebih kecil pada layar mobile */
+    max-width: 250px;
   }
 
   .text h2 {
